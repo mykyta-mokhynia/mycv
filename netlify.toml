@@ -1,0 +1,17 @@
+[build]
+  command = "npm run build:netlify"
+  publish = "dist/mykyta-cv/browser"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[functions]
+  directory = "netlify/functions"
