@@ -3,11 +3,12 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { LanguageService, Language } from '../../services/language.service';
 import { LanguageSwitcherComponent } from '../language-switcher/language-switcher.component';
+import { PdfDownloadComponent } from '../pdf-download/pdf-download.component';
 
 @Component({
   selector: 'app-cv',
   standalone: true,
-  imports: [CommonModule, LanguageSwitcherComponent],
+  imports: [CommonModule, LanguageSwitcherComponent, PdfDownloadComponent],
   templateUrl: './cv.component.html',
   styleUrls: ['./cv.component.scss']
 })

@@ -57,18 +57,12 @@
   }
 }
 
-/* Светлая тема */
-@media (prefers-color-scheme: light) {
-  .lang-link {
-    --fg: #111827;
-    --bg: rgba(17, 24, 39, 0.05);
-    --bd: rgba(17, 24, 39, 0.12);
-    --fg-active: #4f46e5;
-    --bg-active: #ffffff;
-    --bd-active: #d1d5db;
-
-    &:hover {
-      background: rgba(17, 24, 39, 0.08);
-    }
-  }
+/* Фіксовані кольори без залежності від теми системи */
+.lang-link {
+  --fg: #ffffff !important;
+  --bg: rgba(255, 255, 255, 0.1) !important;
+  --bd: rgba(255, 255, 255, 0.3) !important;
+  --fg-active: #6366f1 !important;
+  --bg-active: #ffffff !important;
+  --bd-active: #ffffff !important;
 }

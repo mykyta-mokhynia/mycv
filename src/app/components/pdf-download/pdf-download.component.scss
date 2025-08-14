@@ -1,0 +1,239 @@
+.pdf-download-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #ffffff;
+  border: 2px solid #e6e9ee;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  
+  // Adobe Reader стиль - рамка з обрізаними кутами
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 6px;
+    z-index: 1;
+  }
+  
+  // Обрізані кути
+  &::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    background: #ffffff;
+    border-radius: 4px;
+    z-index: 2;
+  }
+  
+  &:hover:not(:disabled) {
+    border-color: #163a6b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(22, 58, 107, 0.15);
+    
+    &::before {
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    }
+  }
+  
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(22, 58, 107, 0.1);
+  }
+  
+  // Фокус для доступності
+  &:focus {
+    outline: none;
+    border-color: #163a6b;
+    box-shadow: 0 0 0 3px rgba(22, 58, 107, 0.1);
+  }
+  
+  // Стан завантаження
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+    
+    &::before {
+      background: linear-gradient(135deg, #f1f3f4 0%, #e8eaed 100%);
+    }
+  }
+}
+
+.download-icon {
+  width: 18px;
+  height: 18px;
+  color: #163a6b;
+  z-index: 3;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.pdf-download-btn:hover:not(:disabled) .download-icon {
+  color: #1f4d8f;
+}
+
+// Анімація завантаження
+.pdf-download-btn:active:not(:disabled) .download-icon {
+  transform: translateY(1px);
+  transition: transform 0.1s ease;
+}
+
+// Текст завантаження
+.loading-text {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: #163a6b;
+  font-weight: 500;
+  z-index: 3;
+  white-space: nowrap;
+}
+
+// PDF версія стилі
+.pdf-version {
+  background: #ffffff !important;
+  color: #000000 !important;
+  font-family: 'Arial', sans-serif !important;
+  
+  .cv__header {
+    background: #f8f9fa !important;
+    color: #000000 !important;
+    border-bottom: 2px solid #dee2e6 !important;
+    padding: 15px 20px !important;
+    margin-bottom: 20px !important;
+  }
+  
+  .cv__headline {
+    color: #000000 !important;
+    font-size: 24px !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+  }
+  
+  .card {
+    border: 1px solid #dee2e6 !important;
+    background: #ffffff !important;
+    margin-bottom: 20px !important;
+    padding: 15px !important;
+    border-radius: 4px !important;
+  }
+  
+  .card__title {
+    color: #000000 !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    margin-bottom: 10px !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding-bottom: 5px !important;
+  }
+  
+  .personal__role,
+  .personal__location {
+    color: #333333 !important;
+    font-size: 14px !important;
+    margin: 5px 0 !important;
+  }
+  
+  .contact__list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  .contact__item {
+    color: #333333 !important;
+    font-size: 14px !important;
+    margin: 8px 0 !important;
+    padding: 5px 0 !important;
+  }
+  
+  .contact__item a {
+    color: #0066cc !important;
+    text-decoration: underline !important;
+  }
+  
+  .lang {
+    margin: 10px 0 !important;
+  }
+  
+  .lang__name {
+    color: #333333 !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+  }
+  
+  .about__text {
+    color: #333333 !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+    text-align: justify !important;
+  }
+  
+  .xp__header {
+    margin-bottom: 10px !important;
+  }
+  
+  .xp__role {
+    color: #000000 !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    margin: 0 0 5px 0 !important;
+  }
+  
+  .xp__meta {
+    color: #666666 !important;
+    font-size: 13px !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .xp__list {
+    color: #333333 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    padding-left: 20px !important;
+  }
+  
+  .xp__list li {
+    margin: 5px 0 !important;
+  }
+  
+  .skills__grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+  
+  .skills__subtitle {
+    color: #000000 !important;
+    font-size: 16px !important;
+    font-weight: bold !important;
+    margin-bottom: 8px !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    padding-bottom: 3px !important;
+  }
+  
+  .skills__list {
+    color: #333333 !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    padding-left: 20px !important;
+  }
+  
+  .skills__list li {
+    margin: 3px 0 !important;
+  }
+}
