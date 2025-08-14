@@ -1,0 +1,11 @@
+<div class="language-switcher">
+  <a
+    *ngFor="let lang of supportedLanguages"
+    [routerLink]="['/', lang]"
+    routerLinkActive="active"
+    class="lang-link"
+    [class.active]="currentLanguage === lang"
+  >
+    {{ lang.toUpperCase() }}
+  </a>
+</div> 

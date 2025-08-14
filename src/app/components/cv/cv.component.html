@@ -1,0 +1,146 @@
+<div class="cv theme-ribbon" data-density="compact">
+    <!-- Шапка -->
+    <header class="cv__header" role="banner">
+      <h1 class="cv__headline">{{ translate('title') }}</h1>
+      <div class="cv__header-actions">
+        <app-language-switcher aria-label="Language switcher"></app-language-switcher>
+      </div>
+    </header>
+  
+    <!-- Контент -->
+    <main class="cv__main" role="main">
+      <!-- Левая колонка -->
+      <aside class="cv__sidebar" aria-label="Profile">
+        <section class="card personal">
+          <h2 class="card__title">{{ translate('name') }}</h2>
+          <p class="personal__role">Junior Software Developer</p>
+          <p class="personal__location">
+            <span class="emoji" aria-hidden="true">📍</span>
+            <span>Saint John, Canada</span>
+          </p>
+        </section>
+  
+        <section class="card contact">
+          <h3 class="card__title">{{ translate('contact') }}</h3>
+          <ul class="contact__list">
+            <li class="contact__item">
+              <span class="emoji" aria-hidden="true">📩</span>
+              <a href="mailto:mykytamokhynia@gmail.com">mykytamokhynia&#64;gmail.com</a>
+            </li>
+            <li class="contact__item">
+              <span class="emoji" aria-hidden="true">💬</span>
+              <a href="https://t.me/mykyta_mokhynia" target="_blank" rel="noopener">tg: &#64;mykyta_mokhynia</a>
+            </li>
+            <li class="contact__item">
+              <span class="emoji" aria-hidden="true">📞</span>
+              <a href="tel:+15066396683">+1 (506) 639-66-83</a>
+            </li>
+            <li class="contact__item">
+              <span class="emoji" aria-hidden="true">💻</span>
+              <a href="https://github.com/mykyta-mokhynia" target="_blank" rel="noopener">github.com/mykyta-mokhynia</a>
+            </li>
+          </ul>
+        </section>
+  
+        <section class="card languages">
+          <h3 class="card__title">{{ currentLanguage === 'ua' ? 'Мови' : 'Languages' }}</h3>
+          <div class="lang">
+            <span class="lang__name">{{ currentLanguage === 'ua' ? 'Українська' : 'Ukrainian' }}</span>
+            <div class="progress" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+              <span class="progress__bar" style="width:100%"></span>
+            </div>
+          </div>
+          <div class="lang">
+            <span class="lang__name">English</span>
+            <div class="progress" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+              <span class="progress__bar" style="width:75%"></span>
+            </div>
+          </div>
+        </section>
+      </aside>
+  
+      <!-- Правая колонка -->
+      <section class="cv__content">
+        <section class="card about">
+          <h3 class="card__title">{{ translate('about') }}</h3>
+          <p class="about__text">
+            {{ currentLanguage === 'ua' ? 
+              'Junior Software Developer, зосереджений на веб-розробці. Створюю клієнтські застосунки на Angular (TypeScript, реактивні форми, маршрутизація, Angular Material) та REST-сервіси на Node.js/Express. Працюю з MySQL: проєктую прості схеми, пишу запити та веду міграції. Маю практичний досвід з Firebase (Authentication, Hosting) і повсякденними інструментами Git/GitHub та VS Code. Швидко навчаюся, дбаю про якість коду й із задоволенням працюю в команді під менторством.' :
+              'Junior Software Developer focused on web development. I build client-side applications with Angular (TypeScript, reactive forms, routing, Angular Material) and develop RESTful services using Node.js/Express. I work with MySQL: designing simple schemas, writing queries, and maintaining migrations. Hands-on with Firebase (Authentication, Hosting) and everyday tools like Git/GitHub and VS Code. I learn quickly, care about code quality, and enjoy collaborating in mentor-led teams.'
+            }}
+          </p>
+        </section>
+  
+        <section class="card experience">
+          <h3 class="card__title">{{ translate('experience') }}</h3>
+  
+          <article class="xp">
+            <header class="xp__header">
+              <h4 class="xp__role">{{ currentLanguage === 'ua' ? 'Стажер' : 'Intern' }}</h4>
+              <div class="xp__meta">
+                <span class="xp__time">{{ currentLanguage === 'ua' ? 'Січень 2025 – Червень 2025' : 'January 2025 – June 2025' }}</span>
+                <span class="xp__org">• Brilliant Labs</span>
+              </div>
+            </header>
+            <ul class="xp__list">
+              <li>{{ currentLanguage === 'ua' ? 'Опановував основи Angular та TypeScript, працював із реактивними формами та маршрутизацією' : 'Learned Angular and TypeScript fundamentals, including reactive forms and routing' }}</li>
+              <li>{{ currentLanguage === 'ua' ? 'Реалізовував невеликі багаторазові компоненти з використанням Angular Material' : 'Implemented small reusable components using Angular Material' }}</li>
+              <li>{{ currentLanguage === 'ua' ? 'Працював з Git/GitHub: гілки, pull-requests, базовий code review' : 'Used Git/GitHub: branching, pull requests, basic code reviews' }}</li>
+              <li>{{ currentLanguage === 'ua' ? 'Ознайомився з MySQL: проєктування простих схем, CRUD-операції' : 'Explored MySQL: simple schema design and CRUD operations' }}</li>
+              <li>{{ currentLanguage === 'ua' ? 'Брав участь у коротких стендапах та трекінгу задач у команді' : 'Participated in short stand-ups and team task tracking' }}</li>
+            </ul>
+          </article>
+  
+          <article class="xp">
+            <header class="xp__header">
+              <h4 class="xp__role">{{ currentLanguage === 'ua' ? 'Junior Developer' : 'Junior Developer' }}</h4>
+              <div class="xp__meta">
+                <span class="xp__time">{{ currentLanguage === 'ua' ? 'Червень 2025 – Поточний час' : 'June 2025 – Present' }}</span>
+              </div>
+            </header>
+            <ul class="xp__list">
+              <li>{{ currentLanguage === 'ua' ? 'Розробляю веб-застосунки на Angular та бекенд на Node.js/Express' : 'Develop web applications with Angular and backend services using Node.js/Express' }}</li>
+              <li>{{ currentLanguage === 'ua' ? 'Проєктую та реалізую REST-ендпоїнти, базову автентифікацію і валідацію' : 'Design and implement REST endpoints, basic authentication, and validation' }}</li>
+              <li>{{ currentLanguage === 'ua' ? 'Працюю з MySQL: створення таблиць, написання запитів, підтримка міграцій' : 'Work with MySQL: create tables, write queries, and maintain migrations' }}</li>
+              <li>{{ currentLanguage === 'ua' ? 'Інтегрую Firebase (Authentication, Hosting) за потреби' : 'Integrate Firebase (Authentication, Hosting) when appropriate' }}</li>
+              <li>{{ currentLanguage === 'ua' ? 'Покращую інтерфейс за допомогою Angular Material, виправляю помилки та рефакторю код' : 'Enhance UI with Angular Material, fix bugs, and refactor for readability' }}</li>
+              <li>{{ currentLanguage === 'ua' ? 'Беру участь у плануванні, оцінюванні завдань та рев’ю' : 'Participate in planning, task estimation, and reviews' }}</li>
+            </ul>
+          </article>
+        </section>
+  
+        <section class="card skills">
+          <h3 class="card__title">{{ translate('skills') }}</h3>
+          <div class="skills__grid">
+            <div class="skills__group">
+              <h4 class="skills__subtitle">{{ translate('frontend') }}</h4>
+              <ul class="skills__list">
+                <li>Angular (routing, reactive forms)</li>
+                <li>TypeScript</li>
+                <li>HTML/SCSS</li>
+                <li>Angular Material</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h4 class="skills__subtitle">{{ translate('backend') }}</h4>
+              <ul class="skills__list">
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>MySQL (schema design, queries, migrations)</li>
+                <li>REST APIs</li>
+              </ul>
+            </div>
+            <div class="skills__group">
+              <h4 class="skills__subtitle">{{ translate('tools') }}</h4>
+              <ul class="skills__list">
+                <li>Git, GitHub (branches, PRs)</li>
+                <li>Firebase (Auth, Hosting)</li>
+                <li>VS Code</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+  

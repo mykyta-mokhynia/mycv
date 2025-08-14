@@ -1,1 +1,80 @@
-/* You can add global styles to this file, and also import other style files */
+/* =========  GLOBAL  ========= */
+
+/* Тематические токены (глобальные переменные) */
+:root {
+    --bg: #0f1115;
+    --card: #151922;
+    --muted: #8b94a7;
+    --text: #e7ebf3;
+    --brand: #7c9cff;
+    --brand-2: #2ee6a6;
+    --border: #1e2430;
+    --shadow: 0 10px 30px rgba(0,0,0,.35);
+  
+    --radius-s: 10px;
+    --radius-m: 16px;
+    --radius-l: 22px;
+  
+    --space-1: clamp(8px, .9vw, 12px);
+    --space-2: clamp(12px, 1.2vw, 16px);
+    --space-3: clamp(16px, 1.6vw, 22px);
+    --space-4: clamp(20px, 2.0vw, 28px);
+    --space-5: clamp(28px, 3vw, 42px);
+  
+    --fs-1: clamp(12px, 1.1vw, 14px);
+    --fs-2: clamp(13px, 1.2vw, 15px);
+    --fs-3: clamp(14px, 1.4vw, 17px);
+    --fs-4: clamp(16px, 1.8vw, 22px);
+    --fs-5: clamp(20px, 2.6vw, 28px);
+    --fs-6: clamp(24px, 3.2vw, 36px);
+  }
+  
+  /* Светлая тема по системной настройке */
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --text: #0f1115;
+      --muted: #4b5568;
+      --border: #e8eaf2;
+      --shadow: 0 10px 30px rgba(32,41,55,0.08);
+    }
+  }
+  
+  /* Базовые резеты */
+  *,
+  *::before,
+  *::after { box-sizing: border-box; }
+  
+  html, body {
+    padding: 0; margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 400 var(--fs-3)/1.55 system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  
+  a {
+    color: var(--brand);
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+  a:focus-visible {
+    outline: 2px solid var(--brand-2);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  
+  ul { margin: 0; padding-left: 1.25rem; }
+  p  { margin: 0; }
+  h1, h2, h3, h4 { margin: 0 0 var(--space-2); line-height: 1.25; }
+  
+  /* Печать (PDF) — глобально, чтобы точно сработало */
+  @media print {
+    :root {
+      --bg: #ffffff; --card: #ffffff; --text: #000; --muted: #333; --border: #ddd;
+    }
+    a { text-decoration: none; color: #000; }
+  }
+  
