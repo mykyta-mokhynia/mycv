@@ -15,7 +15,7 @@ export interface Translations {
   providedIn: 'root'
 })
 export class LanguageService {
-  private currentLanguageSubject = new BehaviorSubject<Language>('ua');
+  private currentLanguageSubject = new BehaviorSubject<Language>('en');
   public currentLanguage$ = this.currentLanguageSubject.asObservable();
 
   private translations: Translations = {
@@ -89,6 +89,9 @@ export class LanguageService {
     const urlLang = this.getLanguageFromUrl();
     if (urlLang) {
       this.currentLanguageSubject.next(urlLang);
+    } else {
+      // Якщо мова не знайдена в URL, встановлюємо 'en' за замовчуванням
+      this.currentLanguageSubject.next('en');
     }
   }
 

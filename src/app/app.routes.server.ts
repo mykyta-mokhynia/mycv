@@ -5,8 +5,8 @@ export const serverRoutes: ServerRoute[] = [
     path: ':lang',
     renderMode: RenderMode.Prerender,
     getPrerenderParams: async () => [
-      { lang: 'ua' },
-      { lang: 'en' }
+      { lang: 'en' },
+      { lang: 'ua' }
     ]
   },
   {

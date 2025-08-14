@@ -3,8 +3,7 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: '/ua',
-    pathMatch: 'full'
+    loadComponent: () => import('./components/redirect/redirect.component').then(m => m.RedirectComponent)
   },
   {
     path: ':lang',
@@ -12,6 +11,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '/ua'
+    redirectTo: '/en'
   }
 ];
