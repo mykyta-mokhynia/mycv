@@ -15,3 +15,7 @@
 
 [functions]
   directory = "netlify/functions"
+
+# AppEngine configuration
+[functions."netlifyAppEngineHandler"]
+  included_files = ["dist/mykyta-cv/server/**"]
