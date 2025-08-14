@@ -59,16 +59,16 @@
 
 /* Стилі для теми Ribbon Sidebar */
 .theme-ribbon .lang-link {
-  --fg: var(--ribbon-ink, #ffffff);
-  --bg: rgba(255, 255, 255, 0.15);
-  --bd: rgba(255, 255, 255, 0.4);
-  --fg-active: var(--ribbon-bg, #163a6b);
-  --bg-active: #ffffff;
-  --bd-active: #ffffff;
+  --fg: var(--ribbon-bg, #163a6b);
+  --bg: rgba(22, 58, 107, 0.1);
+  --bd: rgba(22, 58, 107, 0.3);
+  --fg-active: #ffffff;
+  --bg-active: var(--ribbon-bg, #163a6b);
+  --bd-active: var(--ribbon-bg, #163a6b);
   
   &:hover {
-    background: rgba(255, 255, 255, 0.25);
-    border-color: rgba(255, 255, 255, 0.6);
+    background: rgba(22, 58, 107, 0.2);
+    border-color: rgba(22, 58, 107, 0.5);
   }
   
   &.active {
