@@ -7,69 +7,68 @@
   padding: 0.5rem;
 }
 
+/* Общий стиль */
 .lang-link {
-  padding: 0.4rem 0.75rem;
-  text-decoration: none;
-  border: 1px solid var(--border);
-  border-radius: 0.375rem;
-  color: var(--text);
-  font-weight: 500;
-  font-size: 0.9rem;
-  background: var(--card);
-  transition: all 0.2s ease;
+  padding: 0.4rem 0.8rem;
   min-width: 2.5rem;
   text-align: center;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: var(--radius-s);
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--card) 90%, var(--bg) 10%);
+  color: var(--text);
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
 }
 
 .lang-link:hover {
-  background: color-mix(in srgb, var(--card) 90%, var(--brand) 10%);
+  background: color-mix(in srgb, var(--brand) 18%, var(--card) 82%);
   transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
 }
 
+/* Активная */
 .lang-link.active {
-  background: var(--brand);
-  color: #ffffff;
-  border-color: var(--brand);
-  box-shadow: 0 2px 6px rgba(124, 156, 255, 0.3);
+  background: linear-gradient(135deg, var(--brand), var(--brand-2));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
   font-weight: 600;
 }
 
-/* --- Адаптивность --- */
-@media (min-width: 640px) {
+/* --- Светлая тема (через prefers-color-scheme) --- */
+@media (prefers-color-scheme: light) {
   .lang-link {
-    padding: 0.45rem 1rem;
-    font-size: 1rem;
+    background: #ffffff;
+    color: var(--text);
+    border: 1px solid var(--border);
+  }
+  .lang-link:hover {
+    background: color-mix(in srgb, var(--brand) 12%, #fff 88%);
   }
 }
 
+/* --- Тема Ribbon --- */
+.theme-ribbon .lang-link {
+  background: var(--chip-bg);
+  color: var(--ribbon-bg);
+  border-color: var(--divider);
+}
+.theme-ribbon .lang-link:hover {
+  background: color-mix(in srgb, var(--chip-bg) 70%, var(--ribbon-bg) 30%);
+  border-color: var(--ribbon-bg);
+}
+.theme-ribbon .lang-link.active {
+  background: var(--ribbon-bg);
+  color: var(--ribbon-ink);
+  border-color: var(--ribbon-bg);
+}
+
+/* --- Адаптив --- */
 @media (max-width: 480px) {
-  .language-switcher {
-    gap: 0.4rem;
-  }
   .lang-link {
     padding: 0.35rem 0.6rem;
     font-size: 0.85rem;
-  }
-}
-
-/* --- Стилі для теми Ribbon Sidebar --- */
-.theme-ribbon .lang-link {
-  /* Неактивна кнопка */
-  background: var(--chip-bg, #eef2f7);
-  color: var(--ribbon-bg, #163a6b);
-  border: 1px solid var(--divider, #e6e9ee);
-  
-  &:hover {
-    background: color-mix(in srgb, var(--chip-bg, #eef2f7) 80%, var(--ribbon-bg, #163a6b) 20%);
-    border-color: var(--ribbon-bg, #163a6b);
-  }
-  
-  /* Активна кнопка */
-  &.active {
-    background: var(--ribbon-bg, #163a6b);
-    color: var(--ribbon-ink, #ffffff);
-    border-color: var(--ribbon-bg, #163a6b);
-    box-shadow: 0 2px 8px rgba(22, 58, 107, 0.3);
-    font-weight: 600;
   }
 }
