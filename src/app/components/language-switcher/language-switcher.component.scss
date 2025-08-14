@@ -1,45 +1,52 @@
-/* Контейнер переключателя */
 .language-switcher {
   display: flex;
   gap: 0.5rem;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  padding: 0.5rem;
 }
 
-/* Кнопки языка */
 .lang-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 2.5rem;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
-  font-weight: 600;
-  font-size: 0.875rem;
+  padding: 0.4rem 0.75rem;
   text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.375rem;
+  color: #333;
+  font-weight: 500;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.03);
   transition: all 0.2s ease;
-  cursor: pointer;
+  min-width: 2.5rem;
+  text-align: center;
 }
 
-/* Стилі для теми Ribbon Sidebar */
-.theme-ribbon .lang-link {
-  /* Неактивна кнопка */
-  background: #e0e7ff;
-  color: #3730a3;
-  border: 2px solid #c7d2fe;
-  
-  &:hover {
-    background: #c7d2fe;
-    border-color: #a5b4fc;
-    transform: translateY(-1px);
+.lang-link:hover {
+  background: rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.lang-link.active {
+  background: #fff; 
+  color: #2563eb;
+  border-color: #2563eb;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.3);
+}
+
+/* --- Адаптивность --- */
+@media (min-width: 640px) {
+  .lang-link {
+    padding: 0.45rem 1rem;
+    font-size: 1rem;
   }
-  
-  /* Активна кнопка */
-  &.active {
-    background: #3730a3;
-    color: #ffffff;
-    border-color: #3730a3;
-    box-shadow: 0 4px 12px rgba(55, 48, 163, 0.3);
-    font-weight: 700;
+}
+
+@media (max-width: 480px) {
+  .language-switcher {
+    gap: 0.4rem;
+  }
+  .lang-link {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.85rem;
   }
 }
