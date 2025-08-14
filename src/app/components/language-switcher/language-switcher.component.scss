@@ -11,9 +11,9 @@
   --fg: #ffffff;
   --bg: rgba(255, 255, 255, 0.1);
   --bd: rgba(255, 255, 255, 0.3);
-  --fg-active: #6366f1;
-  --bg-active: #ffffff;
-  --bd-active: #ffffff;
+  --fg-active: #ffffff;
+  --bg-active: rgba(255, 255, 255, 0.9);
+  --bd-active: rgba(255, 255, 255, 0.9);
 
   display: inline-flex;
   align-items: center;
@@ -38,7 +38,7 @@
 
   &.active {
     background: var(--bg-active);
-    color: var(--fg-active);
+    color: var(--ribbon-bg, #163a6b);
     border-color: var(--bd-active);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
   }
@@ -57,12 +57,23 @@
   }
 }
 
-/* Фіксовані кольори без залежності від теми системи */
-.lang-link {
-  --fg: #ffffff !important;
-  --bg: rgba(255, 255, 255, 0.1) !important;
-  --bd: rgba(255, 255, 255, 0.3) !important;
-  --fg-active: #6366f1 !important;
-  --bg-active: #ffffff !important;
-  --bd-active: #ffffff !important;
+/* Стилі для теми Ribbon Sidebar */
+.theme-ribbon .lang-link {
+  --fg: var(--ribbon-ink, #ffffff);
+  --bg: rgba(255, 255, 255, 0.1);
+  --bd: rgba(255, 255, 255, 0.3);
+  --fg-active: var(--ribbon-bg, #163a6b);
+  --bg-active: rgba(255, 255, 255, 0.95);
+  --bd-active: rgba(255, 255, 255, 0.95);
+  
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  &.active {
+    background: var(--bg-active);
+    color: var(--fg-active);
+    border-color: var(--bd-active);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
 }

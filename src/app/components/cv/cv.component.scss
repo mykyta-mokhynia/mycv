@@ -309,6 +309,18 @@
      ========= */
   .emoji { display: inline-block; }
   
+  /* =========
+     Ribbon Sidebar Theme
+     ========= */
+  .theme-ribbon {
+    --ribbon-bg: #163a6b;
+    --ribbon-bg-2: #1f4d8f;
+    --ribbon-ink: #ffffff;
+    --chip-bg: #eef2f7;
+    --dot: #1f4d8f;
+    --divider: #e6e9ee;
+  }
+  
   .theme-ribbon::before {
     content: "";
     position: fixed;
